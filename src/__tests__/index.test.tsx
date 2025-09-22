@@ -1,1 +1,3 @@
-it.todo('write a test');
+it('should pass', () => {
+  // Empty test
+});
