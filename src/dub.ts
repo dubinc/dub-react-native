@@ -95,7 +95,7 @@ export class Dub {
       throw new Error('Missing click ID. Call trackOpen first.');
     }
 
-    const response = await this.post<TrackLeadResponse>('/track/lead', {
+    const response = await this.post<TrackLeadResponse>('/track/lead/client', {
       ...body,
       clickId: clickId,
     });
@@ -110,7 +110,7 @@ export class Dub {
   ): Promise<TrackSaleResponse> {
     const clickId = await this._storage.getClickId();
 
-    return this.post<TrackSaleResponse>('/track/sale', {
+    return this.post<TrackSaleResponse>('/track/sale/client', {
       ...body,
       clickId: clickId ?? undefined,
     });

@@ -1,6 +1,6 @@
 {
   "name": "@dub/react-native",
-  "version": "0.1.0",
+  "version": "0.0.2",
   "description": "Handle deep links and track conversions from your React Native app.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
@@ -35,7 +35,7 @@
     "dev": "npx react-native start",
     "example": "yarn workspace @dub/react-native-example",
     "test": "jest",
-    "typecheck": "tsc",
+    "typecheck": "tsc -p tsconfig.build.json",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "lint:fix": "eslint \"**/*.{js,ts,tsx}\" --fix",
     "clean": "rm -R node_modules && rm -R example/node_modules && del-cli android/build example/android/build example/android/app/build example/ios/build lib",
@@ -58,7 +58,7 @@
   },
   "homepage": "https://github.com/dubinc/dub-react-native#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "access": "public"
   },
   "devDependencies": {
     "@babel/core": "^7.28.4",
