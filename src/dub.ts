@@ -62,11 +62,23 @@ export class Dub {
       body.deepLink = deepLink;
     } else {
       try {
-        const hasString = await Clipboard.hasString();
+        let clipboardText: string | null = null;
 
-        if (hasString) {
-          const clipboardText = await Clipboard.getString();
+        if (Platform.OS === 'ios') {
+          const hasURL = await Clipboard.hasWebURL();
 
+          if (hasURL) {
+            clipboardText = await Clipboard.getString();
+          }
+        } else {
+          const hasString = await Clipboard.hasString();
+
+          if (hasString) {
+            clipboardText = await Clipboard.getString();
+          }
+        }
+
+        if (clipboardText) {
           const resolvedUrl = this.resolveUrl(clipboardText);
 
           if (resolvedUrl) {
