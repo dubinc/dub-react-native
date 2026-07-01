@@ -1,6 +1,6 @@
 {
   "name": "@dub/react-native",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Handle deep links and track conversions from your React Native app.",
   "main": "./lib/module/index.js",
   "types": "./lib/typescript/src/index.d.ts",
